@@ -1,2 +1,2 @@
 # BMI_calculator
-Make BMI_Calculator Repository 
+BMI 계산해서 보여 주는 앱
