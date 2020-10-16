@@ -1,6 +1,8 @@
+import 'file:///C:/Users/fnogd/AndroidStudioProjects/bmi_calculator/lib/utilis/size_Config.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/utilis/constants.dart';
-import 'package:bmi_calculator/utilis/size_Config.dart';
+import 'Age_Screens.dart';
+import 'height_Conatiner.dart';
 
 class BMIMainPage extends StatefulWidget {
   @override
@@ -55,7 +57,16 @@ class _BMIMainPageState extends State<BMIMainPage> {
                 )
               ],
             ),
-          )
+          ),
+          Container(
+            height: getProportionateScreenHeight(200),
+            child: Row(
+              children: <Widget>[
+                buildAge(),
+                buildweight(),
+              ],
+            ),
+          ),
         ],
       ),
     );

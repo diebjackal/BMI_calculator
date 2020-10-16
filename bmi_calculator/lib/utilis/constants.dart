@@ -6,9 +6,11 @@ Color colour = Colors.white;
 const venusIcon = FontAwesomeIcons.venus;
 const marsIcon = FontAwesomeIcons.mars;
 
-const marsColor = Color(0xff2a9df4);
-const venusColor = Color(0xffffb7c5);
-
+const marsColor = Color(0xff2a9df4); // 남자 select => color
+const venusColor = Color(0xffff0130); // 여자 select => color
+List<dynamic> IconList = [Icons.add, Icons.remove];
+int age = 18;
+int weight = 60;
 const backgroundColors = Color.fromRGBO(244, 245, 251, 0.9);
 
 List<dynamic> iconList = [marsIcon, venusIcon];
