@@ -1,32 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:bmi_calculator/utilits/decorations.dart';
+import 'package:bmi_calculator/utilis/constants.dart';
+import 'package:bmi_calculator/utilis/size_Config.dart';
 
-class BMI_mainPage extends StatefulWidget {
+class BMIMainPage extends StatefulWidget {
   @override
-  _BMI_mainPageState createState() => _BMI_mainPageState();
+  _BMIMainPageState createState() => _BMIMainPageState();
 }
 
-class _BMI_mainPageState extends State<BMI_mainPage> {
+class _BMIMainPageState extends State<BMIMainPage> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text('BMI Calculator'),
-      ),
+      backgroundColor: backgroundColors, // 휜색 Color
       body: Column(
         children: <Widget>[
-          Expanded(
-            child: Row(
+          Text(
+            'BMI Calculator',
+            style: KTitleTextStyle,
+          ),
+          Container(
+            width: getProportionateScreenWidth(300),
+            height: getProportionateScreenHeight(100),
+            decoration: BoxDecoration(
+              color: colour,
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                Expanded(
-                  child: Column(
+                Text(
+                  '성별',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                ),
+                Container(
+                  width: getProportionateScreenWidth(225),
+                  height: getProportionateScreenHeight(40),
+                  decoration: KGenderSelectContainerDecoration,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Gender(),
-                      Height(),
+                      _BuildFlatButton(index: 0),
+                      _BuildFlatButton(index: 1),
                     ],
                   ),
-                ),
-                Weight(),
+                )
               ],
             ),
           )
@@ -35,29 +61,19 @@ class _BMI_mainPageState extends State<BMI_mainPage> {
     );
   }
 
-  Widget Gender() {
-    return Expanded(
+  Widget _BuildFlatButton({int index}) {
+    return FlatButton(
+      onPressed: () {
+        setState(() {
+          colour = ColorList[index];
+          print('press');
+        });
+      },
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       child: Container(
-        margin: EdgeInsets.all(10.0),
-        decoration: veiwExpanted(),
-      ),
-    );
-  }
-
-  Widget Height() {
-    return Expanded(
-      child: Container(
-        margin: EdgeInsets.all(10.0),
-        decoration: veiwExpanted(),
-      ),
-    );
-  }
-
-  Widget Weight() {
-    return Expanded(
-      child: Container(
-        margin: EdgeInsets.all(10.0),
-        decoration: veiwExpanted(),
+        height: double.infinity,
+        child: Icon(iconList[index]),
       ),
     );
   }

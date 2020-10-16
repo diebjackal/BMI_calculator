@@ -1,4 +1,4 @@
-import 'package:bmi_calculator/screens/BMI_mainPage.dart';
+import 'package:bmi_calculator/screens/BMI_Mainpage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BMI_calculator',
+      title: 'BMI_Calculator',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: BMI_mainPage(),
+      home: BMIMainPage(),
       debugShowCheckedModeBanner: false,
     );
   }
