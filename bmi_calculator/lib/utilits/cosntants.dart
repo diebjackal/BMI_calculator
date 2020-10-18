@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-List<Color> ColorList = [
-  Color(0xfffc9fd1),
-  Color(0xffffde84),
-  Color(0xff84beff)
-];
+import 'colors.dart';
 
 const venusIcon = FontAwesomeIcons.venus;
 const marsIcon = FontAwesomeIcons.mars;
 List<dynamic> iconList = [marsIcon, venusIcon];
-
-const kBottomContainerHeight = 80.0;
-const kActiveCardColour = Color(0xFF1D1E33);
-const kInactiveCardColour = Color(0xFF111328);
-const kBottomContainerColour = Color(0xFFEB1555);
 
 Decoration KGenderSelectContainerDecoration() {
   return BoxDecoration(
@@ -30,3 +21,28 @@ Decoration KGenderSelectContainerDecoration() {
     ],
   );
 }
+
+Decoration imformationsDecoration() {
+  return BoxDecoration(
+    color: backGroundColor,
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black87,
+        offset: Offset(1, 1),
+        blurRadius: 10,
+      ),
+    ],
+  );
+}
+
+const heightTextStyle = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 90,
+  color: whiteColor,
+);
+
+const LabelTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 20,
+  color: whiteColor,
+);
