@@ -1,5 +1,5 @@
 import 'package:bmi_calculator/utilits/container_SIze.dart';
-import 'package:bmi_calculator/utilits/cosntants.dart';
+import 'package:bmi_calculator/utilits/constants.dart';
 import 'package:flutter/material.dart';
 
 class GenderSelect extends StatefulWidget {

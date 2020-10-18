@@ -1,6 +1,6 @@
 import 'package:bmi_calculator/screens/user_Imformation.dart';
 import 'package:bmi_calculator/utilits/container_SIze.dart';
-import 'package:bmi_calculator/utilits/cosntants.dart';
+import 'package:bmi_calculator/utilits/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'Gender_Select.dart';
@@ -42,9 +42,9 @@ class _BMIMainPageState extends State<BMIMainPage> {
             child: Container(
               child: Row(
                 children: [
-                  ageView(),
-                  heightView(),
-                  weightView(),
+                  ageView(index: 0),
+                  heightView(index: 1),
+                  weightView(index: 2),
                 ],
               ),
             ),
