@@ -24,7 +24,11 @@ Decoration KGenderSelectContainerDecoration() {
 
 Decoration imformationsDecoration() {
   return BoxDecoration(
-    color: backGroundColor,
+    gradient: LinearGradient(
+      begin: Alignment.centerRight,
+      end: Alignment.centerLeft,
+      colors: [backgroundColor, endBackgroundColor],
+    ),
     boxShadow: [
       BoxShadow(
         color: Colors.black87,
