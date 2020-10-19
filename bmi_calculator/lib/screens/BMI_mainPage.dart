@@ -18,11 +18,10 @@ class _BMIMainPageState extends State<BMIMainPage> {
         children: <Widget>[
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(top: 40),
-              margin: EdgeInsets.only(bottom: 15),
               width: fullSizeContainer,
               decoration: imformationsDecoration(),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Text(
                     'BMI CALCULATOR',

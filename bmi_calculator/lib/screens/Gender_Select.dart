@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/utilits/colors.dart';
 import 'package:bmi_calculator/utilits/container_SIze.dart';
 import 'package:bmi_calculator/utilits/constants.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,13 @@ class _GenderSelectState extends State<GenderSelect> {
     return Expanded(
       child: FlatButton(
         onPressed: () {
-          setState(() {});
+          setState(() {
+            if (index == 0) {
+              print('girl press');
+            } else if (index == 1) {
+              print('man press');
+            }
+          });
         },
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
@@ -36,6 +43,7 @@ class _GenderSelectState extends State<GenderSelect> {
           width: fullSizeContainer,
           child: Icon(
             iconList[index],
+            color: iconColorList[index],
             size: 50.0,
           ),
           margin: MSizePadding,

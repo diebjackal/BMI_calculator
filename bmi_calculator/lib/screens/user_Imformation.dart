@@ -18,7 +18,7 @@ class ageView extends StatelessWidget {
         margin: XSizePadding,
         height: fullSizeContainer,
         decoration: BoxDecoration(
-          color: ColorList[index],
+          color: colorList[index],
           borderRadius: BorderRadius.circular(15),
         ),
         child: Center(
@@ -42,7 +42,7 @@ class heightView extends StatelessWidget {
         margin: XSizePadding,
         height: fullSizeContainer,
         decoration: BoxDecoration(
-          color: ColorList[index],
+          color: colorList[index],
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
@@ -77,7 +77,7 @@ class weightView extends StatelessWidget {
         margin: XSizePadding,
         height: fullSizeContainer,
         decoration: BoxDecoration(
-          color: ColorList[index],
+          color: colorList[index],
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
