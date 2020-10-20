@@ -21,11 +21,21 @@ class ageView extends StatelessWidget {
           color: colorList[index],
           borderRadius: BorderRadius.circular(15),
         ),
-        child: Center(
-          child: Text(
-            '$age',
-            style: userInformationTextStyle,
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              '$age',
+              style: userInformationTextStyle,
+            ),
+            Container(
+              margin: userInformationMSizePadding,
+              child: Text(
+                '살',
+                style: userInformationUnitTextStyle,
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -53,7 +63,7 @@ class heightView extends StatelessWidget {
               style: userInformationTextStyle,
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: userInformationXSizePadding,
               child: Text(
                 'cm',
                 style: userInformationUnitTextStyle,
@@ -88,7 +98,7 @@ class weightView extends StatelessWidget {
               style: userInformationTextStyle,
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: userInformationXSizePadding,
               child: Text(
                 'Kg',
                 style: userInformationUnitTextStyle,

@@ -39,7 +39,7 @@ Decoration imformationsDecoration() {
   );
 }
 
-const heightTextStyle = TextStyle(
+const BMIResultTextStyle = TextStyle(
   fontWeight: FontWeight.w600,
   fontSize: 90,
   color: whiteColor,

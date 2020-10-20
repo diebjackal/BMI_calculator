@@ -3,12 +3,12 @@ import 'package:bmi_calculator/utilits/container_SIze.dart';
 import 'package:bmi_calculator/utilits/constants.dart';
 import 'package:flutter/material.dart';
 
-class GenderSelect extends StatefulWidget {
+class GenderSelectView extends StatefulWidget {
   @override
-  _GenderSelectState createState() => _GenderSelectState();
+  _GenderSelectViewState createState() => _GenderSelectViewState();
 }
 
-class _GenderSelectState extends State<GenderSelect> {
+class _GenderSelectViewState extends State<GenderSelectView> {
   @override
   Widget build(BuildContext context) {
     return Expanded(

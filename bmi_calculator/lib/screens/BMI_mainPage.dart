@@ -28,15 +28,15 @@ class _BMIMainPageState extends State<BMIMainPage> {
                     style: LabelTextStyle,
                   ),
                   Text(
-                    '26.5',
-                    style: heightTextStyle,
+                    '22',
+                    style: BMIResultTextStyle,
                   ),
                 ],
               ),
             ),
             flex: 4,
           ),
-          GenderSelect(),
+          GenderSelectView(),
           Expanded(
             child: Container(
               child: Row(
