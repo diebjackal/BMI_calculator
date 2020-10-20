@@ -1,9 +1,10 @@
-import 'package:bmi_calculator/screens/user_Imformation.dart';
+import 'file:///C:/Users/fnogd/AndroidStudioProjects/bmi_calculator/lib/components/user_Imformation.dart';
 import 'package:bmi_calculator/utilits/container_SIze.dart';
 import 'package:bmi_calculator/utilits/constants.dart';
 import 'package:flutter/material.dart';
-
-import 'Gender_Select.dart';
+import 'package:bmi_calculator/components/bottom_button.dart';
+import 'package:bmi_calculator/screens/gender_Select_page.dart';
+import '../components/Gender_Select.dart';
 
 class BMIMainPage extends StatefulWidget {
   @override
@@ -49,10 +50,17 @@ class _BMIMainPageState extends State<BMIMainPage> {
             ),
             flex: 2,
           ),
-          Expanded(
-            child: Container(),
-            flex: 1,
-          )
+          BottomButton(
+            buttonTitle: '다시 계산 하기',
+            onTap: () {
+              Navigator.pop(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GenderSelect(),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );

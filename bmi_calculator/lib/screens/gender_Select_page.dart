@@ -36,8 +36,12 @@ class _GenderSelectState extends State<GenderSelect> {
             child: FlatButton(
               onPressed: () {
                 setState(() {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => BMIMainPage()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BMIMainPage(),
+                    ),
+                  );
                 });
               },
             ),
