@@ -20,7 +20,7 @@ class BottomButton extends StatelessWidget {
             style: LabelTextStyle,
           ),
         ),
-        color: backgroundColor,
+        decoration: BottomButtonDecoration(),
         width: fullSizeContainer,
         height: 80.0,
       ),

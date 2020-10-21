@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'screens/gender_Select_page.dart';
+import 'screens/input_Page.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'bmi_Calculator',
       debugShowCheckedModeBanner: false,
-      home: GenderSelect(),
+      home: inputPage(),
     );
   }
 }

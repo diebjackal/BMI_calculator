@@ -13,6 +13,7 @@ class _GenderSelectViewState extends State<GenderSelectView> {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
+        margin: EdgeInsets.symmetric(vertical: 5),
         child: Row(
           children: [
             genderSelect(index: 0),

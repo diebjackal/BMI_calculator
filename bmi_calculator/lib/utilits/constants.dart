@@ -39,6 +39,16 @@ Decoration imformationsDecoration() {
   );
 }
 
+Decoration BottomButtonDecoration() {
+  return BoxDecoration(
+    color: backgroundColor,
+    borderRadius: BorderRadius.only(
+      topRight: Radius.circular(15.0),
+      topLeft: Radius.circular(15.0),
+    ),
+  );
+}
+
 const BMIResultTextStyle = TextStyle(
   fontWeight: FontWeight.w600,
   fontSize: 90,
