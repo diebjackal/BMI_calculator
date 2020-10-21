@@ -72,3 +72,9 @@ const userInformationUnitTextStyle = TextStyle(
   fontSize: 20,
   fontWeight: FontWeight.w700,
 );
+
+const genderTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 30,
+  fontWeight: FontWeight.bold,
+);
