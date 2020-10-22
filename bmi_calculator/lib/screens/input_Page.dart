@@ -1,3 +1,5 @@
+import 'package:bmi_calculator/components/gender_choice.dart';
+import 'package:bmi_calculator/utilits/colors.dart';
 import 'package:bmi_calculator/utilits/constants.dart';
 import 'package:bmi_calculator/utilits/container_SIze.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +14,9 @@ class _inputPageState extends State<inputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfffafafa),
       body: Column(
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           Text(
             "정보를 입력해 주세요",
@@ -21,49 +25,38 @@ class _inputPageState extends State<inputPage> {
           Row(
             children: <Widget>[
               Expanded(
-                child: Container(
-                  margin: XSizePadding,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Color(0xff2c3e50),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.mars,
-                        color: Colors.white,
-                        size: 40,
-                      ),
-                      Text('남자', style: genderTextStyle),
-                    ],
-                  ),
+                child: GenderChoice(
+                  onTap: () {},
+                  genderTitle: '남자',
+                  icon: FontAwesomeIcons.mars,
+                  colour: maleColors,
                 ),
               ),
               Expanded(
-                child: Container(
-                  margin: XSizePadding,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Color(0xffe74c3c),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.venus,
-                        color: Colors.white,
-                        size: 40,
-                      ),
-                      Text('여자', style: genderTextStyle),
-                    ],
-                  ),
+                child: GenderChoice(
+                  onTap: () {},
+                  genderTitle: '여자',
+                  icon: FontAwesomeIcons.venus,
+                  colour: femaleColors,
                 ),
               ),
             ],
           ),
+          // Container(
+          //   width: fullSizeContainer,
+          //   height: 150,
+          //   color: Colors.red,
+          // ),
+          // Container(
+          //   width: fullSizeContainer,
+          //   height: 150,
+          //   color: Colors.blue,
+          // ),
+          // Container(
+          //   width: 150,
+          //   height: 90,
+          //   color: Colors.blue,
+          // ),
         ],
       ),
     );

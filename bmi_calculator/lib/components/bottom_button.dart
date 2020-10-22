@@ -1,7 +1,6 @@
 import 'package:bmi_calculator/utilits/constants.dart';
 import 'package:bmi_calculator/utilits/container_SIze.dart';
 import 'package:flutter/material.dart';
-import 'package:bmi_calculator/utilits/colors.dart';
 
 class BottomButton extends StatelessWidget {
   BottomButton({@required this.onTap, @required this.buttonTitle});
