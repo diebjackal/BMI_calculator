@@ -1,6 +1,6 @@
-import 'package:bmi_calculator/utilits/colors.dart';
-import 'package:bmi_calculator/utilits/container_SIze.dart';
-import 'package:bmi_calculator/utilits/constants.dart';
+import 'package:bmi_calculator/utility/colors.dart';
+import 'package:bmi_calculator/utility/container_SIze.dart';
+import 'package:bmi_calculator/utility/constants.dart';
 import 'package:flutter/material.dart';
 
 class GenderSelectView extends StatefulWidget {
@@ -16,8 +16,8 @@ class _GenderSelectViewState extends State<GenderSelectView> {
         margin: EdgeInsets.symmetric(vertical: 5),
         child: Row(
           children: [
-            genderSelect(index: 0),
-            genderSelect(index: 1),
+            viewChoiceGender(index: 0),
+            viewChoiceGender(index: 1),
           ],
         ),
       ),
@@ -25,31 +25,18 @@ class _GenderSelectViewState extends State<GenderSelectView> {
     );
   }
 
-  Widget genderSelect({int index}) {
+  Widget viewChoiceGender({int index}) {
     return Expanded(
-      child: FlatButton(
-        onPressed: () {
-          setState(() {
-            if (index == 0) {
-              print('girl press');
-            } else if (index == 1) {
-              print('man press');
-            }
-          });
-        },
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        child: Container(
-          height: fullSizeContainer,
-          width: fullSizeContainer,
-          child: Icon(
-            iconList[index],
-            color: iconColorList[index],
-            size: 50.0,
-          ),
-          margin: MSizePadding,
-          decoration: KGenderSelectContainerDecoration(),
+      child: Container(
+        height: fullSizeContainer,
+        width: fullSizeContainer,
+        child: Icon(
+          iconList[index],
+          color: iconColorList[index],
+          size: 50.0,
         ),
+        margin: MSizePadding,
+        decoration: KGenderSelectContainerDecoration(),
       ),
     );
   }

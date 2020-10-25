@@ -1,8 +1,8 @@
 import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/components/round_icon_button.dart';
-import 'package:bmi_calculator/utilits/constants.dart';
-import 'package:bmi_calculator/utilits/container_SIze.dart';
-import 'package:bmi_calculator/utilits/size_config.dart';
+import 'package:bmi_calculator/utility/constants.dart';
+import 'package:bmi_calculator/utility/container_SIze.dart';
+import 'package:bmi_calculator/utility/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../calculator_brain.dart';
@@ -28,55 +28,61 @@ class _InputPageState extends State<InputPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(
-              "정보를 입력해 주세요",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            Container(
+              padding: XSizePadding,
+              decoration: inputLabelTextDecoration(),
+              child: Text(
+                "정보를 입력해 주세요",
+                style: inputLabelTextStyle,
+              ),
             ),
-            //
             Container(
               width: fullSizeContainer,
-              padding: EdgeInsets.symmetric(vertical: 15),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-              ),
+              padding:
+                  EdgeInsets.only(top: 15, bottom: 15, right: 60, left: 20),
+              decoration: inputInformationDecoration(),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Image.asset(
                     'images/height.png',
                     height: getProportionateScreenHeight(130),
                     width: getProportionateScreenWidth(130),
                   ),
-                  RoundIconButton(
-                      icon: FontAwesomeIcons.minus,
-                      onPressed: () {
-                        setState(() {
-                          age--;
-                        });
-                      }),
-                  Text(
-                    '$age살',
-                    style: userInformationSettingTextStyle,
+                  Column(
+                    children: <Widget>[
+                      Text(
+                        '$age살',
+                        style: userInformationSettingTextStyle,
+                      ),
+                      Row(
+                        children: <Widget>[
+                          RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              }),
+                          SizedBox(width: 20),
+                          RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              }),
+                        ],
+                      ),
+                    ],
                   ),
-                  RoundIconButton(
-                      icon: FontAwesomeIcons.plus,
-                      onPressed: () {
-                        setState(() {
-                          age++;
-                        });
-                      }),
                 ],
               ),
             ),
-            //
             Container(
               width: fullSizeContainer,
               padding: EdgeInsets.symmetric(vertical: 15),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-              ),
+              decoration: inputInformationDecoration(),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -86,7 +92,6 @@ class _InputPageState extends State<InputPage> {
                     width: getProportionateScreenWidth(130),
                   ),
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
                         '${_height.toInt()} cm',
@@ -95,7 +100,7 @@ class _InputPageState extends State<InputPage> {
                       Slider(
                         value: _height,
                         min: 100,
-                        max: 300,
+                        max: 220,
                         onChanged: (double value) {
                           setState(() {
                             _height = value;
@@ -110,20 +115,16 @@ class _InputPageState extends State<InputPage> {
             Container(
               width: fullSizeContainer,
               padding: EdgeInsets.symmetric(vertical: 15),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-              ),
+              decoration: inputInformationDecoration(),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Image.asset(
-                    'images/weight.png',
+                    'images/weightIcon.png',
                     height: getProportionateScreenHeight(130),
                     width: getProportionateScreenWidth(130),
                   ),
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
                         '${_weight.toInt()} kg',
@@ -131,8 +132,8 @@ class _InputPageState extends State<InputPage> {
                       ),
                       Slider(
                         value: _weight,
-                        min: 20,
-                        max: 150,
+                        min: 30,
+                        max: 140,
                         onChanged: (double value) {
                           setState(() {
                             _weight = value;

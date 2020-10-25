@@ -1,6 +1,6 @@
 import 'package:bmi_calculator/components/user_Information.dart';
-import 'package:bmi_calculator/utilits/container_SIze.dart';
-import 'package:bmi_calculator/utilits/constants.dart';
+import 'package:bmi_calculator/utility/container_SIze.dart';
+import 'package:bmi_calculator/utility/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/screens/input_Page.dart';
@@ -27,7 +27,7 @@ class BMIMainPage extends StatelessWidget {
           Expanded(
             child: Container(
               width: fullSizeContainer,
-              decoration: imformationsDecoration(),
+              decoration: informationDecoration(),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -62,7 +62,7 @@ class BMIMainPage extends StatelessWidget {
             flex: 2,
           ),
           BottomButton(
-            buttonTitle: '다시 계산 하기',
+            buttonTitle: '다시 계산하기',
             onTap: () {
               Navigator.pop(context,
                   MaterialPageRoute(builder: (context) => InputPage()));

@@ -9,8 +9,6 @@ void main() {
       statusBarBrightness: Brightness.light,
     ),
   );
-  theme:
-  ThemeData(fontFamily: 'RussoOne');
   runApp(MyApp());
 }
 
