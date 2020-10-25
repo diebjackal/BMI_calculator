@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class ageView extends StatelessWidget {
   int index;
-  double age;
+  int age;
   ageView({@required this.index, @required this.age});
 
   @override
@@ -22,7 +22,7 @@ class ageView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              '20',
+              '${age}',
               style: userInformationTextStyle,
             ),
             Container(

@@ -7,6 +7,7 @@ const venusIcon = FontAwesomeIcons.venus;
 const marsIcon = FontAwesomeIcons.mars;
 List<dynamic> iconList = [marsIcon, venusIcon];
 
+// ignore: non_constant_identifier_names
 Decoration KGenderSelectContainerDecoration() {
   return BoxDecoration(
     color: Colors.white,
@@ -39,6 +40,7 @@ Decoration imformationsDecoration() {
   );
 }
 
+// ignore: non_constant_identifier_names
 Decoration BottomButtonDecoration() {
   return BoxDecoration(
     color: backgroundColor,
@@ -49,6 +51,12 @@ Decoration BottomButtonDecoration() {
   );
 }
 
+const BMIBodyStateTextStyle = TextStyle(
+  fontSize: 35,
+  color: Colors.lightGreenAccent,
+  fontWeight: FontWeight.bold,
+);
+
 const BMIResultTextStyle = TextStyle(
   fontWeight: FontWeight.w600,
   fontSize: 90,
@@ -57,7 +65,7 @@ const BMIResultTextStyle = TextStyle(
 
 const LabelTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
-  fontSize: 20,
+  fontSize: 25,
   color: whiteColor,
 );
 
@@ -65,6 +73,11 @@ const userInformationTextStyle = TextStyle(
   color: Colors.white,
   fontSize: 45,
   fontWeight: FontWeight.w600,
+);
+
+const userInformationSettingTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 50,
 );
 
 const userInformationUnitTextStyle = TextStyle(

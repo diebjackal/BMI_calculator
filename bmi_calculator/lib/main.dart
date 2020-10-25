@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'bmi_Calculator',
       debugShowCheckedModeBanner: false,
-      home: inputPage(),
+      home: InputPage(),
     );
   }
 }
