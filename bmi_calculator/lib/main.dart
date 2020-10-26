@@ -1,6 +1,7 @@
+import 'package:bmi_calculator/screens/choice_Gender_Page.dart';
+import 'package:bmi_calculator/screens/input_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'screens/input_Page.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(

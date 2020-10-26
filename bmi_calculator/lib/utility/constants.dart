@@ -25,6 +25,7 @@ Decoration KGenderSelectContainerDecoration() {
 
 Decoration inputLabelTextDecoration() {
   return BoxDecoration(
+    color: whiteColor,
     borderRadius: BorderRadius.circular(20),
     border: Border.all(
       color: Colors.black87,

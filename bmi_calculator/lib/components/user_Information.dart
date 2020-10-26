@@ -4,9 +4,8 @@ import 'package:bmi_calculator/utility/constants.dart';
 import 'package:flutter/material.dart';
 
 class ageView extends StatelessWidget {
-  int index;
   int age;
-  ageView({@required this.index, @required this.age});
+  ageView({@required this.age});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class ageView extends StatelessWidget {
         margin: XSizePadding,
         height: fullSizeContainer,
         decoration: BoxDecoration(
-          color: colorList[index],
+          color: AgeColors,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
@@ -41,9 +40,8 @@ class ageView extends StatelessWidget {
 
 // ignore: must_be_immutable
 class heightView extends StatelessWidget {
-  int index;
   double height;
-  heightView({@required this.index, @required this.height});
+  heightView({@required this.height});
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -51,7 +49,7 @@ class heightView extends StatelessWidget {
         margin: XSizePadding,
         height: fullSizeContainer,
         decoration: BoxDecoration(
-          color: colorList[index],
+          color: heightColors,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
@@ -77,9 +75,8 @@ class heightView extends StatelessWidget {
 
 // ignore: camel_case_types
 class weightView extends StatelessWidget {
-  int index;
   double weight;
-  weightView({@required this.index, @required this.weight});
+  weightView({@required this.weight});
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -87,7 +84,7 @@ class weightView extends StatelessWidget {
         margin: XSizePadding,
         height: fullSizeContainer,
         decoration: BoxDecoration(
-          color: colorList[index],
+          color: weightColors,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(

@@ -6,7 +6,7 @@ import 'package:bmi_calculator/utility/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../calculator_brain.dart';
-import 'BMI_MainPage.dart';
+import 'BMI_ResultPage.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -45,7 +45,7 @@ class _InputPageState extends State<InputPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Image.asset(
-                    'images/height.png',
+                    'images/ageIcon.png',
                     height: getProportionateScreenHeight(130),
                     width: getProportionateScreenWidth(130),
                   ),
