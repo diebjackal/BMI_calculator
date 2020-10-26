@@ -19,6 +19,7 @@ class BMIMainPage extends StatelessWidget {
   final double weight;
   final double height;
   final int age;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,8 +66,12 @@ class BMIMainPage extends StatelessWidget {
           BottomButton(
             buttonTitle: '다시 계산하기',
             onTap: () {
-              Navigator.pop(context,
-                  MaterialPageRoute(builder: (context) => InputPage()));
+              Navigator.pop(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => InputPage(),
+                ),
+              );
             },
           ),
         ],

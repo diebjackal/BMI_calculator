@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'colors.dart';
 
 const venusIcon = FontAwesomeIcons.venus;
@@ -61,7 +60,11 @@ Decoration informationDecoration() {
 // ignore: non_constant_identifier_names
 Decoration BottomButtonDecoration() {
   return BoxDecoration(
-    color: backgroundColor,
+    gradient: LinearGradient(
+      begin: Alignment.centerRight,
+      end: Alignment.centerLeft,
+      colors: [backgroundColor, backgroundColor, endBackgroundColor],
+    ),
     borderRadius: BorderRadius.only(
       topRight: Radius.circular(15.0),
       topLeft: Radius.circular(15.0),
