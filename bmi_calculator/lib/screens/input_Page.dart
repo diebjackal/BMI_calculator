@@ -1,5 +1,6 @@
 import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/components/round_icon_button.dart';
+import 'package:bmi_calculator/utility/colors.dart';
 import 'package:bmi_calculator/utility/constants.dart';
 import 'package:bmi_calculator/utility/container_SIze.dart';
 import 'package:bmi_calculator/utility/size_config.dart';
@@ -16,14 +17,14 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   double _height = 180;
   double _weight = 60;
-  int age = 20;
+  int _age = 20;
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
 
     return Scaffold(
-      backgroundColor: Color(0xffECECEC),
+      backgroundColor: backgroundColor,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,7 +53,7 @@ class _InputPageState extends State<InputPage> {
                   Column(
                     children: <Widget>[
                       Text(
-                        '$age살',
+                        '$_age살',
                         style: userInformationSettingTextStyle,
                       ),
                       Row(
@@ -61,7 +62,7 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 setState(() {
-                                  age++;
+                                  _age++;
                                 });
                               }),
                           SizedBox(width: 20),
@@ -69,7 +70,7 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
-                                  age--;
+                                  _age--;
                                 });
                               }),
                         ],
@@ -158,7 +159,7 @@ class _InputPageState extends State<InputPage> {
                       bodyState: calc.getResult(),
                       weight: _weight,
                       height: _height,
-                      age: age,
+                      age: _age,
                     ),
                   ),
                 );

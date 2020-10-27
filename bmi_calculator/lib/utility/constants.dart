@@ -45,7 +45,7 @@ Decoration informationDecoration() {
     gradient: LinearGradient(
       begin: Alignment.centerRight,
       end: Alignment.centerLeft,
-      colors: [backgroundColor, endBackgroundColor],
+      colors: [inputBackgroundColor, inputEndBackgroundColor],
     ),
     boxShadow: [
       BoxShadow(
@@ -63,7 +63,11 @@ Decoration BottomButtonDecoration() {
     gradient: LinearGradient(
       begin: Alignment.centerRight,
       end: Alignment.centerLeft,
-      colors: [backgroundColor, backgroundColor, endBackgroundColor],
+      colors: [
+        inputBackgroundColor,
+        inputBackgroundColor,
+        inputEndBackgroundColor
+      ],
     ),
     borderRadius: BorderRadius.only(
       topRight: Radius.circular(15.0),

@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/utility/colors.dart';
 import 'package:flutter/material.dart';
 
 class GenderChoice extends StatefulWidget {
@@ -8,8 +9,8 @@ class GenderChoice extends StatefulWidget {
 class _GenderChoiceState extends State<GenderChoice> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
+    return Scaffold(
+      backgroundColor: backgroundColor,
     );
   }
 }

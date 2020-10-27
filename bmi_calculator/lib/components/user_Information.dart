@@ -2,11 +2,12 @@ import 'package:bmi_calculator/utility/colors.dart';
 import 'package:bmi_calculator/utility/container_SIze.dart';
 import 'package:bmi_calculator/utility/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/myProvider.dart';
+import 'package:provider/provider.dart';
 
 class ageView extends StatelessWidget {
   int age;
   ageView({@required this.age});
-
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -21,7 +22,7 @@ class ageView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              '$age',
+              '${context.watch<MyProvider>().age}',
               style: userInformationTextStyle,
             ),
             Container(
