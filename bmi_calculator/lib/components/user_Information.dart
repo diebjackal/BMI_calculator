@@ -6,8 +6,6 @@ import 'package:bmi_calculator/myProvider.dart';
 import 'package:provider/provider.dart';
 
 class ageView extends StatelessWidget {
-  int age;
-  ageView({@required this.age});
   @override
   Widget build(BuildContext context) {
     return Expanded(

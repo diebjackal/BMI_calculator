@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../calculator_brain.dart';
 import 'BMI_ResultPage.dart';
+import 'package:bmi_calculator/myProvider.dart';
+import 'package:provider/provider.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -17,7 +19,6 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   double _height = 180;
   double _weight = 60;
-  int _age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -53,26 +54,22 @@ class _InputPageState extends State<InputPage> {
                   Column(
                     children: <Widget>[
                       Text(
-                        '$_age살',
+                        '${context.watch<MyProvider>().age}살',
                         style: userInformationSettingTextStyle,
                       ),
                       Row(
                         children: <Widget>[
                           RoundIconButton(
-                              icon: FontAwesomeIcons.plus,
-                              onPressed: () {
-                                setState(() {
-                                  _age++;
-                                });
-                              }),
+                            icon: FontAwesomeIcons.plus,
+                            onPressed: () =>
+                                context.read<MyProvider>().incrementAge(),
+                          ),
                           SizedBox(width: 20),
                           RoundIconButton(
-                              icon: FontAwesomeIcons.minus,
-                              onPressed: () {
-                                setState(() {
-                                  _age--;
-                                });
-                              }),
+                            icon: FontAwesomeIcons.minus,
+                            onPressed: () =>
+                                context.read<MyProvider>().decrementAge(),
+                          ),
                         ],
                       ),
                     ],
@@ -100,7 +97,7 @@ class _InputPageState extends State<InputPage> {
                       ),
                       Slider(
                         value: _height,
-                        min: 100,
+                        min: 30,
                         max: 220,
                         onChanged: (double value) {
                           setState(() {
@@ -159,7 +156,6 @@ class _InputPageState extends State<InputPage> {
                       bodyState: calc.getResult(),
                       weight: _weight,
                       height: _height,
-                      age: _age,
                     ),
                   ),
                 );

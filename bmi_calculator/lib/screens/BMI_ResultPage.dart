@@ -7,19 +7,15 @@ import 'package:bmi_calculator/screens/input_Page.dart';
 import '../components/selected_Gender.dart';
 
 class BMIMainPage extends StatelessWidget {
-  BMIMainPage({
-    @required this.bmiResult,
-    @required this.bodyState,
-    @required this.height,
-    @required this.age,
-    @required this.weight,
-  });
-
+  BMIMainPage(
+      {@required this.bmiResult,
+      @required this.bodyState,
+      @required this.weight,
+      @required this.height});
+  double weight;
+  double height;
   final String bmiResult;
   final String bodyState;
-  double height = 180;
-  double weight = 60;
-  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +52,7 @@ class BMIMainPage extends StatelessWidget {
             child: Container(
               child: Row(
                 children: [
-                  ageView(age: age),
+                  ageView(),
                   heightView(height: height),
                   weightView(weight: weight),
                 ],
