@@ -6,22 +6,15 @@ import 'package:bmi_calculator/utility/container_SIze.dart';
 import 'package:bmi_calculator/utility/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../calculator_brain.dart';
+import 'package:bmi_calculator/calculator_brain.dart';
 import 'BMI_ResultPage.dart';
 import 'package:bmi_calculator/myProvider.dart';
 import 'package:provider/provider.dart';
 
-class InputPage extends StatefulWidget {
-  @override
-  _InputPageState createState() => _InputPageState();
-}
-
-class _InputPageState extends State<InputPage> {
-  double _height = 180;
-  double _weight = 60;
-
+class InputPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final information = Provider.of<MyProvider>(context);
     SizeConfig().init(context);
 
     return Scaffold(
@@ -54,26 +47,20 @@ class _InputPageState extends State<InputPage> {
                   Column(
                     children: <Widget>[
                       Text(
-                        '${context.watch<MyProvider>().age}살',
+                        '${information.age}살',
                         style: userInformationSettingTextStyle,
                       ),
                       Row(
                         children: <Widget>[
                           RoundIconButton(
-                              icon: FontAwesomeIcons.plus,
-                              onPressed: () {
-                                setState(() {
-                                  context.read<MyProvider>().incrementAge();
-                                });
-                              }),
+                            icon: FontAwesomeIcons.plus,
+                            onPressed: () => information.incrementAge(),
+                          ),
                           SizedBox(width: 20),
                           RoundIconButton(
-                              icon: FontAwesomeIcons.minus,
-                              onPressed: () {
-                                setState(() {
-                                  context.read<MyProvider>().decrementAge();
-                                });
-                              }),
+                            icon: FontAwesomeIcons.minus,
+                            onPressed: () => information.decrementAge(),
+                          ),
                         ],
                       ),
                     ],
@@ -96,7 +83,7 @@ class _InputPageState extends State<InputPage> {
                   Column(
                     children: <Widget>[
                       Text(
-                        '${context.watch<MyProvider>().height}cm',
+                        '${information.height}cm',
                         style: userInformationSettingTextStyle,
                       ),
                       Consumer<MyProvider>(
@@ -128,7 +115,7 @@ class _InputPageState extends State<InputPage> {
                   Column(
                     children: <Widget>[
                       Text(
-                        '${context.watch<MyProvider>().weight} kg',
+                        '${information.weight} kg',
                         style: userInformationSettingTextStyle,
                       ),
                       Consumer<MyProvider>(
@@ -148,8 +135,10 @@ class _InputPageState extends State<InputPage> {
             BottomButton(
               buttonTitle: '계산하기',
               onTap: () {
-                CalculatorBrain calc =
-                    CalculatorBrain(height: _height, weight: _weight);
+                CalculatorBrain calc = CalculatorBrain(
+                  height: information.height,
+                  weight: information.weight,
+                );
                 Navigator.push(
                   context,
                   MaterialPageRoute(
