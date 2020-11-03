@@ -11,23 +11,18 @@ void main() {
       statusBarBrightness: Brightness.light,
     ),
   );
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => MyProvider()),
-      ],
-      child: MyApp(),
-    ),
-  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'bmi_Calculator',
-      debugShowCheckedModeBanner: false,
-      home: InputPage(),
+    return ChangeNotifierProvider<MyProvider>(
+      create: (_) => MyProvider(),
+      child: MaterialApp(
+        title: 'bmi_Calculator',
+        home: InputPage(),
+      ),
     );
   }
 }

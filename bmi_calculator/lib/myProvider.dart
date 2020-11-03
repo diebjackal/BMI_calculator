@@ -2,34 +2,38 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class MyProvider with ChangeNotifier, DiagnosticableTreeMixin {
-  int _age = 18;
+  int _age = 20;
   int get age => _age;
 
-  int _incrementValue;
-  MyProvider([this._incrementValue]);
+  int _height = 180;
+  int get height => _height;
 
-  int _counter = 0;
-  int get counter => _counter;
+  int _weight = 60;
+  int get weight => _weight;
 
-  int get incrementValue => _incrementValue;
-
-  set incrementValue(int value) {
-    _incrementValue = value;
+  void incrementHeightValue(int value) {
+    _height = value;
     notifyListeners();
   }
 
-  void increment() {
-    _counter += _incrementValue;
+  void incrementWeightValue(int value) {
+    _weight = value;
     notifyListeners();
   }
 
   void incrementAge() {
     _age++;
+    if (_age > 120) {
+      _age = 120;
+    }
     notifyListeners();
   }
 
   void decrementAge() {
     _age--;
+    if (_age < 0) {
+      _age = 0;
+    }
     notifyListeners();
   }
 }

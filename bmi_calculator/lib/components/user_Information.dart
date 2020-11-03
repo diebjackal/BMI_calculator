@@ -20,7 +20,7 @@ class ageView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              '${context.watch<MyProvider>().age}',
+              context.watch<MyProvider>().age.toString(),
               style: userInformationTextStyle,
             ),
             Container(
@@ -39,8 +39,6 @@ class ageView extends StatelessWidget {
 
 // ignore: must_be_immutable
 class heightView extends StatelessWidget {
-  double height;
-  heightView({@required this.height});
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -55,7 +53,7 @@ class heightView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              '${height.toInt()}',
+              context.watch<MyProvider>().height.toString(),
               style: userInformationTextStyle,
             ),
             Container(
@@ -74,8 +72,6 @@ class heightView extends StatelessWidget {
 
 // ignore: camel_case_types
 class weightView extends StatelessWidget {
-  double weight;
-  weightView({@required this.weight});
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -90,7 +86,7 @@ class weightView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              '${weight.toInt()}',
+              '${context.watch<MyProvider>().weight.toInt()}',
               style: userInformationTextStyle,
             ),
             Container(

@@ -1,24 +1,25 @@
 import 'package:bmi_calculator/components/user_Information.dart';
+import 'package:bmi_calculator/myProvider.dart';
 import 'package:bmi_calculator/utility/container_SIze.dart';
 import 'package:bmi_calculator/utility/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/screens/input_Page.dart';
+import 'package:provider/provider.dart';
 import '../components/selected_Gender.dart';
 
 class BMIMainPage extends StatelessWidget {
-  BMIMainPage(
-      {@required this.bmiResult,
-      @required this.bodyState,
-      @required this.weight,
-      @required this.height});
-  double weight;
-  double height;
+  BMIMainPage({
+    @required this.bmiResult,
+    @required this.bodyState,
+  });
+
   final String bmiResult;
   final String bodyState;
 
   @override
   Widget build(BuildContext context) {
+    final information = Provider.of<MyProvider>(context);
     return Scaffold(
       // backgroundColor: Color(0xffECECEC),
       body: Column(
@@ -53,8 +54,8 @@ class BMIMainPage extends StatelessWidget {
               child: Row(
                 children: [
                   ageView(),
-                  heightView(height: height),
-                  weightView(weight: weight),
+                  heightView(),
+                  weightView(),
                 ],
               ),
             ),

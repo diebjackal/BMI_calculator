@@ -60,16 +60,20 @@ class _InputPageState extends State<InputPage> {
                       Row(
                         children: <Widget>[
                           RoundIconButton(
-                            icon: FontAwesomeIcons.plus,
-                            onPressed: () =>
-                                context.read<MyProvider>().incrementAge(),
-                          ),
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  context.read<MyProvider>().incrementAge();
+                                });
+                              }),
                           SizedBox(width: 20),
                           RoundIconButton(
-                            icon: FontAwesomeIcons.minus,
-                            onPressed: () =>
-                                context.read<MyProvider>().decrementAge(),
-                          ),
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(() {
+                                  context.read<MyProvider>().decrementAge();
+                                });
+                              }),
                         ],
                       ),
                     ],
@@ -92,18 +96,17 @@ class _InputPageState extends State<InputPage> {
                   Column(
                     children: <Widget>[
                       Text(
-                        '${_height.toInt()} cm',
+                        '${context.watch<MyProvider>().height}cm',
                         style: userInformationSettingTextStyle,
                       ),
-                      Slider(
-                        value: _height,
-                        min: 30,
-                        max: 220,
-                        onChanged: (double value) {
-                          setState(() {
-                            _height = value;
-                          });
-                        },
+                      Consumer<MyProvider>(
+                        builder: (context, value, child) => Slider(
+                          value: value.height.toDouble(),
+                          min: 100,
+                          max: 220,
+                          onChanged: (val) =>
+                              value.incrementHeightValue(val.toInt()),
+                        ),
                       ),
                     ],
                   ),
@@ -125,18 +128,17 @@ class _InputPageState extends State<InputPage> {
                   Column(
                     children: <Widget>[
                       Text(
-                        '${_weight.toInt()} kg',
+                        '${context.watch<MyProvider>().weight} kg',
                         style: userInformationSettingTextStyle,
                       ),
-                      Slider(
-                        value: _weight,
-                        min: 30,
-                        max: 140,
-                        onChanged: (double value) {
-                          setState(() {
-                            _weight = value;
-                          });
-                        },
+                      Consumer<MyProvider>(
+                        builder: (context, value, child) => Slider(
+                          value: value.weight.toDouble(),
+                          min: 10,
+                          max: 150,
+                          onChanged: (val) =>
+                              value.incrementWeightValue(val.toInt()),
+                        ),
                       ),
                     ],
                   ),
@@ -154,8 +156,6 @@ class _InputPageState extends State<InputPage> {
                     builder: (context) => BMIMainPage(
                       bmiResult: calc.calculateBMI(),
                       bodyState: calc.getResult(),
-                      weight: _weight,
-                      height: _height,
                     ),
                   ),
                 );
