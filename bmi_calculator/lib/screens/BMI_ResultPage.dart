@@ -1,12 +1,12 @@
 import 'package:bmi_calculator/components/user_Information.dart';
-import 'package:bmi_calculator/myProvider.dart';
+import 'package:bmi_calculator/screens/gender_select_page.dart';
 import 'package:bmi_calculator/utility/container_SIze.dart';
 import 'package:bmi_calculator/utility/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
-import 'package:bmi_calculator/screens/input_Page.dart';
-import 'package:provider/provider.dart';
 import '../components/selected_Gender.dart';
+// import 'package:provider/provider.dart';
+// import 'package:bmi_calculator/myProvider.dart';
 
 class BMIMainPage extends StatelessWidget {
   BMIMainPage({
@@ -19,9 +19,9 @@ class BMIMainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final information = Provider.of<MyProvider>(context);
+    // final information = Provider.of<MyProvider>(context);
     return Scaffold(
-      // backgroundColor: Color(0xffECECEC),
+      backgroundColor: Color(0xffECECEC),
       body: Column(
         children: <Widget>[
           Expanded(
@@ -64,10 +64,10 @@ class BMIMainPage extends StatelessWidget {
           BottomButton(
             buttonTitle: '다시 계산하기',
             onTap: () {
-              Navigator.pop(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => InputPage(),
+                  builder: (context) => GenderSelectPage(),
                 ),
               );
             },

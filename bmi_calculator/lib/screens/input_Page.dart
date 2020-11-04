@@ -32,9 +32,10 @@ class InputPage extends StatelessWidget {
               ),
             ),
             Container(
+              margin: EdgeInsets.symmetric(horizontal: 10),
               width: fullSizeContainer,
               padding:
-                  EdgeInsets.only(top: 15, bottom: 15, right: 60, left: 20),
+                  EdgeInsets.only(top: 15, bottom: 15, right: 45, left: 20),
               decoration: inputInformationDecoration(),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,6 +71,7 @@ class InputPage extends StatelessWidget {
             ),
             Container(
               width: fullSizeContainer,
+              margin: EdgeInsets.symmetric(horizontal: 10),
               padding: EdgeInsets.symmetric(vertical: 15),
               decoration: inputInformationDecoration(),
               child: Row(
@@ -103,6 +105,7 @@ class InputPage extends StatelessWidget {
             Container(
               width: fullSizeContainer,
               padding: EdgeInsets.symmetric(vertical: 15),
+              margin: EdgeInsets.symmetric(horizontal: 10),
               decoration: inputInformationDecoration(),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
