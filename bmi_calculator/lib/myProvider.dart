@@ -1,6 +1,3 @@
-import 'dart:math';
-
-import 'package:bmi_calculator/utility/colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +15,6 @@ class MyProvider with ChangeNotifier, DiagnosticableTreeMixin {
   int get idx => _idx;
 
   void test(int value) {
-    print(value);
     value == 0 ? _idx = 0 : _idx = 1;
     notifyListeners();
   }
