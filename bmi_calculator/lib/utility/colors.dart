@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const whiteColor = Colors.white;
 
@@ -14,3 +15,5 @@ const heightColors = Color(0xffffde84);
 const weightColors = Color(0xff84beff);
 
 List<Color> iconColorList = [femaleColor, maleColor];
+
+List<dynamic> IconLIst = [FontAwesomeIcons.mars, FontAwesomeIcons.venus];

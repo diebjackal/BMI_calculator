@@ -19,7 +19,6 @@ class BMIMainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final information = Provider.of<MyProvider>(context);
     return Scaffold(
       backgroundColor: Color(0xffECECEC),
       body: Column(

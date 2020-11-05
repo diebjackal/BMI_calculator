@@ -1,5 +1,6 @@
 import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/components/round_icon_button.dart';
+import 'package:bmi_calculator/components/title_components.dart';
 import 'package:bmi_calculator/utility/colors.dart';
 import 'package:bmi_calculator/utility/constants.dart';
 import 'package:bmi_calculator/utility/container_SIze.dart';
@@ -16,21 +17,13 @@ class InputPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final information = Provider.of<MyProvider>(context);
     SizeConfig().init(context);
-
     return Scaffold(
       backgroundColor: backgroundColor,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Container(
-              padding: XSizePadding,
-              decoration: inputLabelTextDecoration(),
-              child: Text(
-                "정보를 입력해 주세요",
-                style: inputLabelTextStyle,
-              ),
-            ),
+            TitleContainer(titleText: '정보를 입력해주세요'),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 10),
               width: fullSizeContainer,
