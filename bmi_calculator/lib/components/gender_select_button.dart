@@ -15,13 +15,15 @@ class GenderSelectButton extends StatelessWidget {
       child: Consumer<MyProvider>(
         builder: (context, value, child) => ToggleSwitch(
           minWidth: 200.0,
-          minHeight: 50.0,
+          minHeight: 65.0,
           initialLabelIndex: value.idx,
-          cornerRadius: 20.0,
+          cornerRadius: 80.0,
           activeFgColor: Colors.white,
           inactiveBgColor: Colors.grey,
           inactiveFgColor: Colors.white,
           labels: labelText,
+          fontSize: 20,
+          iconSize: 30,
           activeBgColors: activeBgColors,
           icons: [FontAwesomeIcons.mars, FontAwesomeIcons.venus],
           onToggle: (idx) => value.test(idx),

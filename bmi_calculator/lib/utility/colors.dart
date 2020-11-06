@@ -14,6 +14,6 @@ const AgeColors = Color(0xfffc9fd1);
 const heightColors = Color(0xffffde84);
 const weightColors = Color(0xff84beff);
 
-List<Color> iconColorList = [femaleColor, maleColor];
+// List<Color> iconColorList = [femaleColor, maleColor];
 
 List<dynamic> iconLIst = [FontAwesomeIcons.mars, FontAwesomeIcons.venus];

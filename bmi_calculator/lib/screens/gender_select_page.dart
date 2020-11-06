@@ -5,7 +5,6 @@ import 'package:bmi_calculator/utility/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/myProvider.dart';
 import 'package:provider/provider.dart';
-
 import 'input_Page.dart';
 
 class GenderSelectPage extends StatelessWidget {
