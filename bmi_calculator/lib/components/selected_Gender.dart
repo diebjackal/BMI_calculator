@@ -20,12 +20,13 @@ class _GenderSelectViewState extends State<GenderSelectView> {
             children: [
               viewChoiceGender(
                 index: 1,
-                colour: value.idx == 0 ? maleColor : whiteColor,
+                genderContainerColour: value.idx == 0 ? maleColor : whiteColor,
                 iconColour: value.idx == 0 ? whiteColor : maleColor,
               ),
               viewChoiceGender(
                 index: 0,
-                colour: value.idx == 1 ? femaleColor : whiteColor,
+                genderContainerColour:
+                    value.idx == 1 ? femaleColor : whiteColor,
                 iconColour: value.idx == 1 ? whiteColor : femaleColor,
               ),
             ],

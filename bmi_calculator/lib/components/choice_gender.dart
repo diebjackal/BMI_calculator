@@ -4,8 +4,9 @@ import 'package:bmi_calculator/utility/container_SIze.dart';
 import 'package:flutter/material.dart';
 
 class viewChoiceGender extends StatelessWidget {
-  viewChoiceGender({@required this.index, this.colour, this.iconColour});
-  final Color colour;
+  viewChoiceGender(
+      {@required this.index, this.genderContainerColour, this.iconColour});
+  final Color genderContainerColour;
   final Color iconColour;
   final int index;
 
@@ -22,7 +23,7 @@ class viewChoiceGender extends StatelessWidget {
         ),
         margin: MSizePadding,
         decoration: BoxDecoration(
-          color: colour,
+          color: genderContainerColour,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
