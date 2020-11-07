@@ -17,57 +17,59 @@ class BMIMainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: whiteColor,
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              width: fullSizeContainer,
-              decoration: informationDecoration(),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Text(
-                    'BMI 계산 결과',
-                    style: LabelTextStyle,
-                  ),
-                  Text(
-                    bmiResult,
-                    style: BMIResultTextStyle,
-                  ),
-                  Text(
-                    bodyState,
-                    style: BMIBodyStateTextStyle,
-                  ),
-                ],
-              ),
-            ),
-            flex: 4,
-          ),
-          GenderSelectView(),
-          Expanded(
-            child: Container(
-              child: Row(
-                children: [
-                  ageView(),
-                  heightView(),
-                  weightView(),
-                ],
-              ),
-            ),
-            flex: 2,
-          ),
-          BottomButton(
-            buttonTitle: '다시 계산하기',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => GenderSelectPage(),
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                width: fullSizeContainer,
+                decoration: informationDecoration(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(
+                      'BMI 계산 결과',
+                      style: LabelTextStyle,
+                    ),
+                    Text(
+                      bmiResult,
+                      style: BMIResultTextStyle,
+                    ),
+                    Text(
+                      bodyState,
+                      style: BMIBodyStateTextStyle,
+                    ),
+                  ],
                 ),
-              );
-            },
-          ),
-        ],
+              ),
+              flex: 4,
+            ),
+            GenderSelectView(),
+            Expanded(
+              child: Container(
+                child: Row(
+                  children: [
+                    ageView(),
+                    heightView(),
+                    weightView(),
+                  ],
+                ),
+              ),
+              flex: 2,
+            ),
+            BottomButton(
+              buttonTitle: '다시 계산하기',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GenderSelectPage(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

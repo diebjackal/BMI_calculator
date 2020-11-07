@@ -11,12 +11,14 @@ void main() {
       statusBarBrightness: Brightness.light,
     ),
   );
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return ChangeNotifierProvider<MyProvider>(
       create: (_) => MyProvider(),
       child: MaterialApp(
