@@ -26,7 +26,7 @@ class GenderSelectPage extends StatelessWidget {
             ),
             GenderSelectButton(
               activeBgColors: [Colors.blue, Colors.pink],
-              labelText: ['Male', 'Female'],
+              labelText: ['남자', '여자'],
             ),
             BottomButton(
               buttonTitle: '다음',

@@ -122,6 +122,12 @@ const userInformationSettingTextStyle = TextStyle(
   fontSize: 50,
 );
 
+const ageTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  color: Colors.black54,
+  fontSize: 25,
+);
+
 const userInformationUnitTextStyle = TextStyle(
   color: Colors.white,
   fontSize: 20,

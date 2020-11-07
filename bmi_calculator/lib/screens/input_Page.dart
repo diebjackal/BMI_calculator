@@ -27,8 +27,7 @@ class InputPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 10),
               width: fullSizeContainer,
-              padding:
-                  EdgeInsets.only(top: 15, bottom: 15, right: 45, left: 20),
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
               decoration: inputInformationDecoration(),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,9 +39,17 @@ class InputPage extends StatelessWidget {
                   ),
                   Column(
                     children: <Widget>[
-                      Text(
-                        '${information.age}살',
-                        style: userInformationSettingTextStyle,
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            '${information.age}살',
+                            style: userInformationSettingTextStyle,
+                          ),
+                          Text(
+                            '(만)',
+                            style: ageTextStyle,
+                          ),
+                        ],
                       ),
                       Row(
                         children: <Widget>[
@@ -78,7 +85,7 @@ class InputPage extends StatelessWidget {
                   Column(
                     children: <Widget>[
                       Text(
-                        '${information.height}cm',
+                        '${information.height} cm',
                         style: userInformationSettingTextStyle,
                       ),
                       Consumer<MyProvider>(
