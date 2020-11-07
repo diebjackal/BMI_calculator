@@ -12,7 +12,7 @@ class GenderSelectPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final information = Provider.of<MyProvider>(context);
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: whiteColor,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

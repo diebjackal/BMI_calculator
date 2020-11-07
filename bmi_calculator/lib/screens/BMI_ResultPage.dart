@@ -16,7 +16,7 @@ class BMIMainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: whiteColor,
       body: Column(
         children: <Widget>[
           Expanded(

@@ -26,17 +26,29 @@ Decoration inputLabelTextDecoration() {
   return BoxDecoration(
     color: whiteColor,
     borderRadius: BorderRadius.circular(20),
-    border: Border.all(
-      color: Colors.black87,
-      width: 2,
-    ),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.5),
+        spreadRadius: 1,
+        blurRadius: 7,
+        offset: Offset(0, 3),
+      )
+    ],
   );
 }
 
 Decoration inputInformationDecoration() {
   return BoxDecoration(
+    color: whiteColor,
     borderRadius: BorderRadius.circular(20),
-    color: Colors.white,
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.5),
+        spreadRadius: 1,
+        blurRadius: 7,
+        offset: Offset(0, 3),
+      )
+    ],
   );
 }
 

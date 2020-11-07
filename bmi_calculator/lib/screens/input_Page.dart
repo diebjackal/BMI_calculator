@@ -18,7 +18,7 @@ class InputPage extends StatelessWidget {
     final information = Provider.of<MyProvider>(context);
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: whiteColor,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,4 +1,3 @@
-import 'package:bmi_calculator/utility/colors.dart';
 import 'package:bmi_calculator/utility/constants.dart';
 import 'package:bmi_calculator/utility/container_SIze.dart';
 import 'package:flutter/material.dart';
