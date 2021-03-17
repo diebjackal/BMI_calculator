@@ -1,2 +1,8 @@
 # BMI_calculator
-BMI 계산해서 보여 주는 앱
+
+# function
+
+1. select gender
+2. input weight height
+3. calculate your Bmi
+4. show Risk your BMI, height, weight, gender
